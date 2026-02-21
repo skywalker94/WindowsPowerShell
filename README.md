@@ -7,7 +7,7 @@ A modular collection of custom PowerShell functions to enhance terminal producti
 ## 📂 Project Structure
 * **Microsoft.PowerShell_profile.ps1**: The master entry point that auto-loads all scripts.
 * **Functions/**: Sub-directory containing modularized logic:
-    * Visuals.ps1: Terminal aesthetics (Matrix rain, greetings).
+    * Visuals.ps1: Terminal aesthetics.
     * Network.ps1: Port checking and connectivity tools.
     * Web.ps1: Sanitized Google and YouTube search integration.
 
@@ -32,15 +32,10 @@ A responsive, falling-code animation with dynamic "dead zones" and color support
 
 ### 🔍 Web Search (google, youtube)
 Robust, URL-sanitized searches directly from the CLI. Prevents URL breakage and handles interactive input.
-* **Usage:** `google "PowerShell modular profiles"` or `yt "lofi hip hop"`
+* **Usage:** `google "PowerShell modular profiles"` or `youtube "lofi hip hop"`
 
 ### 🔌 Port Checker (port)
 Validates port ranges (0-65535) and identifies processes currently occupying specific ports.
 * **Usage:** `port 8080`
-
-## 🛠️ Built With
-* **PowerShell** - Core scripting engine.
-* **.NET [uri] Class** - For robust URL encoding.
-* **PascalCase Standards** - For professional command naming.
 
 ---
