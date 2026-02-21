@@ -386,6 +386,19 @@ function guide {
     Write-Host "-----------------------------`n"
 }
 
+## --- --- --- --- --- SCRIPT LIBRARY --- --- --- --- ---
+
+# Define the path to your script library
+$ScriptsPath = Join-Path (Split-Path $PROFILE) "Functions"
+
+# Create the folder if it doesn't exist yet (enable line if required)
+# if (!(Test-Path $ScriptsPath)) { New-Item $ScriptsPath -ItemType Directory }
+
+# THE AUTO-LOADER: Loop through and load every .ps1 file
+Get-ChildItem -Path $ScriptsPath -Filter *.ps1 | ForEach-Object {
+    . $_.FullName
+}
+
 ## --- --- --- --- --- ON_LAUNCH: WELCOME MESSAGE AND SCRIPTS --- --- --- --- ---
 
 # greet on launch
