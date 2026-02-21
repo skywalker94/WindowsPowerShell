@@ -8,18 +8,7 @@ Set-Alias reload Restart-Profile
 
 # Provides asynchronous audio feedback using Console Beeps.
 function Send-Notification {
-    <#
-    .SYNOPSIS
-        Provides asynchronous audio feedback using Console Beeps.
-    .DESCRIPTION
-        Plays frequencies (defaulting to 432Hz) via background jobs to prevent
-        terminal hanging. Includes presets for common status alerts.
-    .NOTES
-        Revisiting in 6 months:
-        - Default: 432Hz / 1000ms (Verdi Tuning).
-        - Success: 528Hz (Solfeggio 'Transformation' frequency).
-        - Async: Uses 'Start-Job' to run the beep in a separate thread.
-    #>
+
     [CmdletBinding()]
     param(
         # Presets
@@ -116,9 +105,6 @@ function Send-Greeting {
 # A function to reload the profile without needing to restart the terminal
 function Restart-Profile {
     . $PROFILE
-    Clear-Host
-    # Alert Chime
-    # [Console]::Beep(432, 1000)
     Send-Notification -Frequency 528 -Sync -Duration 150
     Write-Host "Profile reloaded successfully!" -ForegroundColor Green
 }
