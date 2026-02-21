@@ -2,7 +2,7 @@
 
 Got a cool function or a helpful alias? I'd love to see it!
 
-## How to contribute:
+## How to contribute: 🤔
 
 ### 💬 Suggest things
 1. Open an issue on Git-Hub about your suggestion. Please use any label(s) that applies to your issue.
