@@ -1,10 +1,18 @@
 ## --- --- --- --- --- ALIASES --- --- --- --- ---
+
 Set-Alias beep Send-Notification
 
 Set-Alias reload Restart-Profile
 
 
+
 ## --- --- --- --- --- FUNCTIONS --- --- --- --- ---
+
+# quick function for a shortcut to edit the $PROFILE (the .bashrc equivalent)
+function edit { code (Split-Path $PROFILE) }
+
+# Nice path display for powershell
+function files { Get-ChildItem | Select-Object Name, LastWriteTime, @{Name="Size(MB)";Expression={"{0:N2}" -f ($_.Length / 1MB)}} | Out-Host }
 
 # Provides asynchronous audio feedback using Console Beeps.
 function Send-Notification {
