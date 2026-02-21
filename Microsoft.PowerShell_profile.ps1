@@ -18,11 +18,22 @@ Set-Alias matrix Start-Matrix
 Set-Alias google Invoke-GoogleSearch
 Set-Alias youtube Invoke-YouTubeSearch
 
+Set-Alias reload Restart-Profile
+
 ## --- --- --- --- --- FUNCTIONS --- --- --- --- ---
 
 # quick function for a shortcut to edit the $PROFILE (the .bashrc equivalent)
 function edit { code $PROFILE }
 function editpro { code (Split-Path $PROFILE) }
+
+# A function to reload the profile without needing to restart the terminal
+function Restart-Profile {
+    . $PROFILE
+    Clear-Host
+    # Alert Chime
+    [Console]::Beep(432, 1000)
+    Write-Host "Profile reloaded successfully!" -ForegroundColor Green
+}
 
 # Nice path display for powershell
 function files { Get-ChildItem | Select-Object Name, LastWriteTime, @{Name="Size(MB)";Expression={"{0:N2}" -f ($_.Length / 1MB)}} | Out-Host }
