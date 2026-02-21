@@ -30,7 +30,7 @@ A modular collection of custom PowerShell functions to enhance terminal producti
 A responsive, falling-code animation with dynamic "dead zones" and color support.
 * **Usage:** `matrix -colour Cyan`
 
-### 🔍 Web Search (google, yt)
+### 🔍 Web Search (google, youtube)
 Robust, URL-sanitized searches directly from the CLI. Prevents URL breakage and handles interactive input.
 * **Usage:** `google "PowerShell modular profiles"` or `yt "lofi hip hop"`
 
