@@ -1,0 +1,11 @@
+# Ignore VS Code settings
+.vscode/
+
+# Ignore PowerShell history and temp files
+*.log
+*.tmp
+ConsoleHost_history.txt
+
+# Ignore OS generated files
+Thumbs.db
+Desktop.ini
