@@ -29,24 +29,6 @@ Set-Alias suggestfunctionprefix Get-Verb # PowerShell has preferred function pre
 
 ## --- --- --- --- --- FUNCTIONS --- --- --- --- ---
 
-# Daily quote from ZenQuotes API (REQUIRES: function 'say')
-function quote {
-    try {
-        # Using a more reliable API
-        $url = "https://zenquotes.io/api/random"
-        $data = curl.exe -s $url | ConvertFrom-Json
-        
-        # ZenQuotes returns an array, so we take the first object [0]
-        $content = $data[0].q
-        $author = $data[0].a
-
-        Write-Host "`n`"$content`"" -Italic -ForegroundColor Yellow
-        Write-Host " - $author`n" -ForegroundColor Gray
-    } catch {
-        Write-Host "Unable to fetch quote. System offline?" -ForegroundColor DarkGray
-    }
-}
-
 # provide a countdown with an audio chime to announce completion
 function countdown ($seconds, $taskName) {
     if (!$seconds) { $seconds = 10 }
