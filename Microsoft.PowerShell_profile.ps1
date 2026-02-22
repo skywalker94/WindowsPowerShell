@@ -7,10 +7,10 @@
 
 $ScriptsPath = Join-Path (Split-Path $PROFILE) "Functions"
 
-# Create the folder if it doesn't exist yet (enable line if required)
+# # Create the folder if it doesn't exist yet (enable line if required)
 # if (!(Test-Path $ScriptsPath)) { New-Item $ScriptsPath -ItemType Directory }
 
-# THE AUTO-LOADER: Loop through and load every .ps1 file
+# THE SCRIPT-LOADER: Loop through and load every .ps1 file from the ScriptsPath folder.
 Get-ChildItem -Path $ScriptsPath -Filter *.ps1 | ForEach-Object { . $_.FullName }
 
 
@@ -21,11 +21,11 @@ Get-ChildItem -Path $ScriptsPath -Filter *.ps1 | ForEach-Object { . $_.FullName 
 ## Format 2: New-Alias <alias> <command>
 ## Example2: New-Alias ll Get-ChildItem
 
-Set-Alias -Name ss -Value btop4win
+Set-Alias -Name ss -Value btop4win # htop quivalent for windows (REQUIRES: btop4win installed and in PATH)
 
-Set-Alias grep Select-String
+Set-Alias grep Select-String # Because linux habits die hard
 
-
+Set-Alias suggestfunctionprefix Get-Verb # PowerShell has preferred function prefixes (like Get-, Set-, Invoke- etc.)
 
 ## --- --- --- --- --- FUNCTIONS --- --- --- --- ---
 
